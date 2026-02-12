@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio de HTML</title>
+    <link rel="stylesheet" href="estilos.css">
+
+
 </head>
 
 <body>
@@ -16,23 +19,58 @@
         <section>
             <p>Datos de Victor Hugo Esquivel Feregrino:</p>
             <ol>
-                <li>Matrícula: A01708849</li>
-                <li>Correo: a01708849@itesm.mx</li>
+                <li id="matricula">Matrícula: A01708849</li>
+                <li class="shooters"> class-Correo: a01708849@itesm.mx</li>
             </ol>
         </section>
 
         <section>
-            <h2>Mi perfil</h2>
+            <h2><i> Mi perfil</i></h2>
             <figure>
                 <img src="IMAGEN/IMAGEN.jpeg" alt="Foto Victor Hugo " width="270">
             </figure>
         </section>
 
+        <section>
+            <section>
+                <h2>Formulario de contacto</h2>
+
+                <form action="#" method="post">
+
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <br><br>
+
+                    <label for="correo">Correo persona:</label>
+                    <input type="email" id="correo" name="correo" required>
+
+                    <br><br>
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="2" cols="17" required></textarea>
+
+                    <br><br>
+
+                    <label for="tema">Motivo de contacto:</label>
+                    <select id="tema" name="tema">
+                        <option value="proyecto">URGENTE</option>
+                        <option value="academico">TAREA</option>
+                        <option value="personal">Personal</option>
+                    </select>
+
+                    <br><br>
+
+                    <button type="submit">Mandarme</button>
+
+                </form>
+            </section>
 
 
 
 
 
+        </section>
 
 
 

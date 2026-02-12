@@ -1,0 +1,16 @@
+body {
+    font-family: "Arial", sans-serif, "Helvetica";
+}
+
+li {
+    color: rgb(50, 98, 222);
+}
+
+.shooters:hover {
+    color: rgb(211, 75, 102);
+
+}
+
+#matricula:hover {
+    color: rgb(183, 196, 69);
+}
