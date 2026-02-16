@@ -37,43 +37,213 @@
             </section>
 
             <section>
+                <h2 class="subtitle" style="text-align: center;">
+                    <strong><em>Formulario del lab 1</em></strong>
+                </h2>
+
                 <section>
-                    <h2 class="subtitle">Formulario de contacto</h2>
+                    <div style="margin-bottom: 35px;">
+                        <h3>1. ¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+                        <p> Internet es la infraestructura de redes físicas y lógicas, como las redes de comunicación y
+                            los
+                            protocolos TCP/IP.
+                            La World Wide Web es un servicio que funciona sobre Internet y permite acceder a páginas web
+                            mediante un navegador.</p>
+                    </div>
 
-                    <form action="#" method="post">
+                    <div style="margin-bottom: 35px;">
+                        <h3>2. ¿Cuáles son las partes de un URL?</h3>
+                        <p>Un URL o Uniform Resource Locator es la dirección completa de un recurso web, sus partes son:
+                        </p>
+                        <ul>
+                            <li>Protocolo (por ejemplo, http o https)</li>
+                            <li>Nombre del servidor (por ejemplo, www.ejemplo.com)</li>
+                            <li>Puerto (opcional, por ejemplo, :80 o :443)</li>
+                            <li>Ruta del recurso (por ejemplo, /pagina/ejemplo.html)</li>
+                            <li>Parámetros de consulta (opcional, por ejemplo, ?parametro=valor)</li>
+                        </ul>
+                    </div>
 
-                        <label for="nombre">Nombre:</label>
-                        <input class="input" type="text" id="nombre" name="nombre" required>
+                    <div style="margin-bottom: 35px;">
+                        <h3>3.¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?</h3>
+                        <p>
+                            Los métodos HTTP definen el tipo de operación que el cliente solicita al servidor sobre un
+                            recurso específico dentro de una aplicación web. GET se utiliza para solicitar y obtener
+                            información sin modificar el estado del servidor, mientras que HEAD funciona de manera
+                            similar pero solo devuelve los encabezados de la respuesta, útil para verificar
+                            disponibilidad o metadatos. POST se emplea para enviar datos al servidor con el fin de crear
+                            un nuevo recurso o procesar información. PUT permite reemplazar completamente un recurso
+                            existente con nueva información. PATCH se utiliza para realizar modificaciones parciales
+                            sobre un recurso ya existente. DELETE, como su nombre indica, elimina un recurso del
+                            servidor. En conjunto, estos métodos permiten implementar operaciones tipo CRUD dentro de
+                            arquitecturas cliente-servidor.
+                        </p>
 
-                        <br><br>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>4.¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando
+                            ingresas
+                            tu usuario y contraseña en algún sitio? ¿Por qué?</h3>
+                        <p>
+                            El método HTTP que se debe utilizar al enviar un formulario que contiene información
+                            sensible, como usuario y contraseña, es POST. Esto se debe a que POST envía los datos dentro
+                            del cuerpo de la solicitud y no en la URL, lo que evita que queden visibles en la barra de
+                            direcciones o almacenados en el historial del navegador. Además, permite transmitir mayor
+                            cantidad de datos sin limitaciones estrictas de longitud. Desde una perspectiva de
+                            seguridad, cuando se combina con HTTPS, POST protege la información mediante cifrado durante
+                            la transmisión. También indica que la solicitud puede modificar el estado del servidor, lo
+                            cual es coherente con procesos de autenticación o envío de información.
+                        </p>
 
-                        <label for="correo">Correo persona:</label>
-                        <input class="input" type="email" id="correo" name="correo" required>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>5. ¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a
+                            través de un URL?</h3>
+                        <p>
+                            El método HTTP que se utiliza cuando un usuario accede a una página web escribiendo un URL
+                            en el navegador es GET. Este método solicita al servidor el recurso especificado, como un
+                            archivo HTML, una imagen o cualquier otro contenido disponible. GET está diseñado para
+                            recuperar información sin modificar el estado del servidor, por lo que es considerado un
+                            método seguro en términos de operación. El navegador envía una solicitud GET al servidor y
+                            este responde con el recurso solicitado junto con un código de estado HTTP. Este mecanismo
+                            constituye la base del modelo cliente-servidor en la navegación web.
+                        </p>
 
-                        <br><br>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>6. Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió
+                            algún error?</h3>
+                        <p>
+                            El código HTTP 200 indica que la solicitud realizada por el cliente fue procesada
+                            correctamente y que el servidor respondió con el recurso solicitado sin inconvenientes. Este
+                            código pertenece a la categoría de respuestas exitosas dentro del protocolo HTTP, lo que
+                            significa que la comunicación entre cliente y servidor se llevó a cabo de manera adecuada.
+                            No ocurrió ningún error, ya que el servidor entendió la petición, la ejecutó y devolvió el
+                            contenido correspondiente. En la práctica, es el código más común cuando una página web
+                            carga correctamente en el navegador. Representa un funcionamiento normal del sistema.
+                        </p>
 
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea class="textarea" id="mensaje" name="mensaje" rows="2" cols="17" required></textarea>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>7. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que
+                            intentó acceder al sitio y se encontró con un error 404? ¿Por qué?</h3>
+                        <p>
+                            El código HTTP 404 indica que el recurso solicitado no fue encontrado en el servidor, lo
+                            cual puede deberse a que el archivo fue eliminado, la ruta cambió o el usuario escribió
+                            incorrectamente el URL. Desde una perspectiva técnica, el desarrollador debe verificar si el
+                            recurso debería existir y corregir enlaces rotos, rutas mal configuradas o problemas en el
+                            enrutamiento del servidor. Si el error se debe a una mala configuración interna, sí es su
+                            responsabilidad spolucionarlo. Sin embargo, si el usuario introdujo una dirección
+                            incorrecta,
+                            no necesariamente implica un fallo del sistema. Aun así, es buena práctica implementar
+                            páginas 404 personalizadas para mejorar la experiencia del usuario.
+                        </p>
 
-                        <br><br>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>8. ¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que
+                            intentó acceder al sitio y se encontró con un error 500? ¿Por qué?</h3>
+                        <p>
+                            El código HTTP 500 indica un error interno del servidor, lo que significa que la solicitud
+                            fue recibida pero no pudo procesarse debido a un problema en la aplicación o en la
+                            configuración del servidor. A diferencia del error 404, este tipo de fallo generalmente está
+                            relacionado con errores en el código, fallos en la base de datos, excepciones no controladas
+                            o mala configuración del entorno. Por lo tanto, sí es responsabilidad del desarrollador
+                            investigar el problema revisando los registros del servidor y corregir la causa raíz. Este
+                            error refleja una falla directa del sistema y no del usuario.
+                        </p>
 
-                        <label for="tema">Motivo de contacto:</label>
-                        <div class="select">
-                            <select id="tema" name="tema">
-                                <option value="proyecto">URGENTE</option>
-                                <option value="academico">TAREA</option>
-                                <option value="personal">Personal</option>
-                            </select>
-                        </div>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>9. ¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona
+                            algunos elementos de HTML 4 que en HTML5 estén desaprobados.</h3>
+                        <p>
+                            Un atributo o elemento depreciado en HTML5 significa que su uso ya no es recomendado porque
+                            ha sido reemplazado por alternativas más modernas y estructuralmente correctas. Aunque
+                            algunos navegadores todavía lo soportan por compatibilidad, puede dejar de funcionar en
+                            versiones futuras. HTML5 eliminó varios elementos de HTML 4 que mezclaban estructura con
+                            presentación, promoviendo que el diseño visual se gestione mediante CSS. Algunos ejemplos de
+                            elementos desaprobados son &lt;font&gt;, &lt;center&gt;, &lt;big&gt;, &lt;strike&gt; y
+                            &lt;frame&gt;. Esta evolución permite mantener el código más limpio, semántico y fácil de
+                            mantener.
+                        </p>
 
-                        <br><br>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>10. ¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+                        <p>
+                            HTML5 introduce una estructura más semántica mediante elementos como &lt;header&gt;,
+                            &lt;footer&gt;, &lt;section&gt; y &lt;article&gt;, lo que permite organizar mejor el
+                            contenido y mejorar la accesibilidad. Además, incorpora soporte nativo para audio y video
+                            con las etiquetas &lt;audio&gt; y &lt;video&gt;, eliminando la dependencia de plugins
+                            externos. También añade nuevos tipos de campos en formularios como email, date y number, lo
+                            que mejora la validación automática. HTML5 simplifica la sintaxis, elimina elementos
+                            obsoletos de HTML4 y mejora la compatibilidad con dispositivos móviles. Asimismo, incluye
+                            nuevas APIs como &lt;canvas&gt; para gráficos dinámicos. Estas mejoras lo convierten en un
+                            estándar más adecuado para aplicaciones web modernas.
+                        </p>
 
-                        <button class="button is-primary" type="submit">Mandarme</button>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>11. ¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+                        <p>
+                            Una tabla en HTML se compone del elemento principal &lt;table&gt;, que define la estructura
+                            general del contenedor de datos. Dentro de ella, &lt;tr&gt; representa cada fila, mientras
+                            que &lt;td&gt; define las celdas de datos y &lt;th&gt; las celdas de encabezado, que aportan
+                            significado semántico y mejoran la accesibilidad. Además, se pueden utilizar &lt;thead&gt;,
+                            &lt;tbody&gt; y &lt;tfoot&gt; para organizar la información en secciones lógicas,
+                            facilitando la lectura y el procesamiento por parte de navegadores y tecnologías asistivas.
+                            En cuanto al estilo, este no debe definirse directamente en la tabla, sino mediante CSS,
+                            permitiendo controlar bordes, espaciado, alineación, colores y diseño responsivo. Esto
+                            separa estructura de presentación, siguiendo buenas prácticas de desarrollo web.
+                        </p>
 
-                    </form>
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>12. ¿Cuáles son los principales controles de una forma HTML5?</h3>
+                        <p>
+                            Los principales controles de una forma en HTML5 permiten capturar y enviar datos del usuario
+                            hacia el servidor mediante el elemento &lt;form&gt;, que actúa como contenedor. El elemento
+                            &lt;input&gt; es el más versátil, ya que admite múltiples tipos como text, password, email,
+                            number, date y file, cada uno con validaciones específicas integradas en el navegador. El
+                            elemento &lt;textarea&gt; se utiliza para ingresar texto extenso, mientras que
+                            &lt;select&gt; junto con &lt;option&gt; permite crear listas desplegables. También se
+                            emplean &lt;button&gt; o input type="submit" para enviar información. HTML5 añade
+                            validaciones automáticas, atributos como required y pattern, y mejoras que reducen la
+                            necesidad de validación inicial con JavaScript.
+                        </p>
+
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>13. ¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</h3>
+                        <p>
+                            El navegador Google Chrome presenta un alto nivel de compatibilidad con el estándar HTML5,
+                            alcanzando aproximadamente más de 500 puntos sobre 555 en la evaluación del sitio
+                            html5test.com, lo que indica soporte amplio para etiquetas semánticas, formularios avanzados
+                            y APIs modernas. Esto incluye compatibilidad con &lt;audio&gt;, &lt;video&gt;,
+                            &lt;canvas&gt;, almacenamiento local (localStorage), geolocalización y manejo de gráficos.
+                            Además, Chrome mantiene actualizaciones constantes que mejoran el cumplimiento de estándares
+                            web definidos por el W3C. Este alto nivel de soporte permite desarrollar aplicaciones web
+                            modernas sin depender de complementos externos. Por esta razón, es uno de los navegadores
+                            más utilizados en desarrollo y pruebas de sistemas web.
+                        </p>
+
+                        <div style="margin-bottom: 35px;"></div>
+                        <h3>14. ¿Cuál es el ciclo de vida de los sistemas de información?</h3>
+                        <p>
+                            El ciclo de vida de los sistemas de información describe las etapas por las que atraviesa un
+                            sistema desde su concepción hasta su retiro. Inicia con la planificación, donde se
+                            identifican necesidades organizacionales y se evalúa la viabilidad del proyecto.
+                            Posteriormente se realiza el análisis, en el que se definen los requerimientos funcionales y
+                            no funcionales. En la fase de diseño se establece la arquitectura, estructura de datos y
+                            componentes del sistema. Luego se lleva a cabo la implementación y puesta en operación.
+                            Finalmente, el sistema entra en mantenimiento, donde se corrigen errores, se optimiza su
+                            desempeño y eventualmente se reemplaza cuando deja de cumplir co
+
+
+
+
+
+
+
+
+
+
                 </section>
 
+
             </section>
+
 
     </main>
 
