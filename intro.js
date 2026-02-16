@@ -15,3 +15,11 @@ console.log(Minecraft);
 
 //Se mabda un error porque la variable halo murio al salir del bloque de codigo donde fue declarada
 console.log(halo);
+
+
+
+alert("Hola Mundo")
+
+const favorito = prompt("¿Cuál es tu videojuego favorito?")
+
+console.log("Tu videojuego favorito es: " + favorito)
