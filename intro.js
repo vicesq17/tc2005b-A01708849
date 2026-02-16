@@ -83,3 +83,5 @@ const videojuego = {
     nombre: "Minecraft",
     genero: "Sandbox",
     plataformas: ["PC", "Consolas", "Móviles"],
+}
+
