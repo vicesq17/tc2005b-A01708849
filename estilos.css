@@ -14,3 +14,15 @@ li {
 #matricula:hover {
     color: rgb(183, 196, 69);
 }
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+.container {
+    border: 2px solid white;
+    padding: 20px;
+    margin: 20px;
+}
