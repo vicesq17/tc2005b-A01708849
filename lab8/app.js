@@ -38,3 +38,22 @@ function leer_numeros_desde_archivo(nombre_archivo) {
     });
 }
 leer_numeros_desde_archivo("numeros.txt");
+
+// iteración final
+function inversoNumero(n) {
+    let num = Math.abs(parseInt(n, 10));
+    let inv = 0;
+
+    while (num > 0) {
+        inv = inv * 10 + (num % 10);
+        num = Math.floor(num / 10);
+    }
+
+    return n < 0 ? -inv : inv;
+}
+
+// Pruebas rápidas
+console.log("Inverso 12345:", inversoNumero(12345)); // 54321
+console.log("Inverso -9020:", inversoNumero(-9020)); // -209
+
+//servidor en Node.js
