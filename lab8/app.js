@@ -57,3 +57,13 @@ console.log("Inverso 12345:", inversoNumero(12345)); // 54321
 console.log("Inverso -9020:", inversoNumero(-9020)); // -209
 
 //servidor en Node.js
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { "Content-Type": "text/plain; charset=utf-8" });
+    res.end("Servidor Lab 8  " + req.url);
+});
+
+server.listen(3000, () => {
+    console.log("Servidor corriendo en http://localhost:3000");
+});
