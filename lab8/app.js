@@ -21,7 +21,9 @@ console.log("Promedio:", promedio_de_nums(numeros));
 
 
 
-// segunda iteración
+// segunda iteración--->referencia de Node.js v25.6.1 documentation
+
+
 const fs = require('fs');
 
 function leer_numeros_desde_archivo(nombre_archivo) {
