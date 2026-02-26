@@ -7,4 +7,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const rutasVideojuegos = require('./routes/videojuegos.routes');
 app.use('/videojuegos', rutasVideojuegos);
 
+app.use((request, response, next) => {
+    response.status(404).send('No hay Videojuegos');
+});
+
 app.listen(3000);
