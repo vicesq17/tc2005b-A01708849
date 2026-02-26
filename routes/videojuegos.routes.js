@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-module.express = router;
-
 const html_header = `
 <!DOCTYPE html>
 <html>
@@ -63,21 +61,21 @@ const videojuegos = [
 ];
 
 //Middleware
-app.use((request, response, next) => {
+router.use((request, response, next) => {
     console.log('Middleware!');
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
-app.get('/new', (request, response, next) => {
+router.get('/new', (request, response, next) => {
     response.send(html_header + html_form + html_footer);
 });
 
-app.post('/new', (request, response, next) => {
+router.post('/new', (request, response, next) => {
     videojuegos.push(request.body);
     response.send(html_header + html_form + html_footer);
 });
 
-app.use((request, response, next) => {
+router.use((request, response, next) => {
     console.log('Otro middleware!');
     let html_index = `
               <a href="/new"><button class="button is-primary">Nuevo videojuego</button></a>
@@ -129,7 +127,4 @@ app.use((request, response, next) => {
     response.send(html_header + html_index + html_footer); //Manda la respuesta
 });
 
-
-const rutasVideojuegos = require('./routes/videojuegos.routes');
-app.use(rutasVideojuegos);
-app.listen(3000);
+module.exports = router;
