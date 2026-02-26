@@ -26,6 +26,8 @@
   "homepage": "https://github.com/ejuarezp/tc2005b_videojuegos#readme",
   "dependencies": {
     "body-parser": "^2.2.2",
-    "express": "^5.2.1"
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "save": "^2.9.0"
   }
 }
