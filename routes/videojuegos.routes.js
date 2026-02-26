@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
+const path = require('path')
+
 const html_header = `
 <!DOCTYPE html>
 <html>
@@ -73,6 +75,10 @@ router.get('/new', (request, response, next) => {
 router.post('/new', (request, response, next) => {
     videojuegos.push(request.body);
     response.redirect('/videojuegos');
+});
+
+router.get('/old', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'old_labs', 'el-archivo.html'));
 });
 
 router.use((request, response, next) => {
