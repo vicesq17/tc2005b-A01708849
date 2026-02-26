@@ -78,7 +78,7 @@ router.post('/new', (request, response, next) => {
 });
 
 router.get('/old', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'old_labs', 'el-archivo.html'));
+    response.sendFile(path.join(__dirname, '..', 'old_labs', 'index.html'));
 });
 
 router.use((request, response, next) => {
