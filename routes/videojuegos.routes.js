@@ -72,7 +72,7 @@ router.get('/new', (request, response, next) => {
 
 router.post('/new', (request, response, next) => {
     videojuegos.push(request.body);
-    response.send(html_header + html_form + html_footer);
+    response.redirect('/videojuegos');
 });
 
 router.use((request, response, next) => {
