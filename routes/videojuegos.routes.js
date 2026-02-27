@@ -4,51 +4,15 @@ const router = express.Router();
 const path = require('path')
 
 const html_header = `
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-  </head>
-  <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">
-        Videojuegos
-      </h1>
-      <p class="subtitle">
-        My first website with <strong>Bulma</strong>!
-      </p>
+
 `;
 
 const html_footer = `
-      </div>
-    </section>
-  <!--script src="js/comportamientos.js"></script-->
-  </body>
-</html>  
+
 `;
 
 const html_form = `
-<form action="/new" method="POST">
-  <div class="field">
-    <label for="nombre" class="label">Nombre</label>
-    <div class="control">
-      <input id="nombre" name="nombre" class="input" type="text" placeholder="e.g Minecraft">
-    </div>
-  </div>
 
-  <div class="field">
-    <label for="imagen" class="label">Imagen</label>
-    <div class="control">
-      <input id="imagen" name="imagen" class="input" type="text" placeholder="e.g. https://store-images.s-microsoft.com/image/apps.58378.13850085746326678.826cc014-d610-46af-bdb3-c5c96be4d22c.64287a91-c69e-4723-bb61-03fecd348c2a?q=90&w=480&h=270">
-    </div>
-  </div>
-
-  <input class="button is-primary" type="submit" value="Guardar">
-</form>
 `;
 
 const videojuegos = [
