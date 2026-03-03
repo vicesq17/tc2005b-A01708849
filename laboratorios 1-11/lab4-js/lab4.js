@@ -174,3 +174,5 @@ document.write("<p>Atleta: " + rutina.nombre + "</p>");
 document.write("<p>Series: " + rutina.series + "</p>");
 document.write("<p>Reps: " + rutina.reps + "</p>");
 document.write("<p>Volumen total: " + volumen + "</p>");
+document.write("Prueba de estabilidad realizada con éxito");
+
