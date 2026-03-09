@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 7: Git y Ramas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        :root { --azul: #4466ff; --violeta: #8844ff; }
+        .texto-azul { color: var(--azul) !important; font-weight: bold; }
+        .texto-violeta { color: var(--violeta) !important; font-weight: bold; }
+        .borde-especial { border-left: 5px solid var(--violeta); }
+        .hero { background: linear-gradient(135deg, var(--azul), var(--violeta)) !important; }
+    </style>
+</head>
+<body>
+    <section class="hero is-small">
+        <div class="hero-body has-text-centered">
+            <h1 class="title has-text-white">Lab 7: Manejo de Ramas</h1>
+            <p class="subtitle has-text-white is-6">Guía rápida de Git para mortales</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="box borde-especial">
+                        <h3 class="title is-5 texto-azul">¿Qué son las ramas?</h3>
+                        <p>Imagina que el código es un árbol. La rama <span class="texto-violeta">main</span> es el tronco (lo que ya funciona), y tú creas ramas pequeñas para experimentar sin romper nada.</p>
+                    </div>
+
+                    <div class="columns mt-4">
+                        <div class="column">
+                            <div class="card">
+                                <div class="card-content has-text-centered">
+                                    <p class="texto-azul is-size-5">Main / Master</p>
+                                    <p class="is-size-7">Solo código perfecto que ya está en internet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="card">
+                                <div class="card-content has-text-centered">
+                                    <p class="texto-violeta is-size-5">Develop</p>
+                                    <p class="is-size-7">Donde todos juntamos nuestras piezas nuevas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content mt-5">
+                        <h3 class="title is-5 texto-azul">Mi rutina diaria en Git</h3>
+                        <ul>
+                            <li><strong>Crear tu espacio:</strong> <code>git checkout -b mi-nombre/mi-tarea</code></li>
+                            <li><strong>Guardar avances:</strong> <code>git add .</code> y luego <code>git commit -m "Explica qué hice yo VictorFere"</code></li>
+                            <li><strong>Sincronizar:</strong> No olvides hacer <code>git pull</code> para ver qué hicieron tus compañeros.</li>
+                        </ul>
+                    </div>
+
+                    <div class="notification is-light">
+                        <p class="has-text-centered"><strong> Regla </strong> Voy a estar bien guey si escribo código directamente en <span class="texto-azul">main</span>.</p>
+                    </div>
+
+                    <div class="mt-6">
+                        <h4 class="title is-6 texto-violeta">Fuentes consultadas:</h4>
+                        <ul class="is-size-7">
+                            <li><a href="https://nvie.com/posts/a-successful-git-branching-model/">Gitflow Model (nvie.com)</a></li>
+                            <li><a href="https://learngitbranching.js.org/">Learn Git Branching Interactivo</a></li>
+                            <li>Documentación oficial de Git y Laboratorio 7 (Tecnol de Monterrey).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer has-text-centered">
+        <p class="is-size-7">© 2026 - Ingeniería de Software</p>
+    </footer>
+</body>
+</html>
