@@ -24,13 +24,53 @@
                 Botón para aceptar o validar
             </button>
             <p id="mensaje" class="text-center mt-3 text-sm font-medium"></p>
-            <button id="btnGeo" class="bg-green-500 text-white w-full py-2 rounded mt-3">
-Obtener ubicación
-</button>
 
-<p id="demo" class="text-center mt-2 text-sm"></p>
+            <button id="btnGeo" class="bg-green-500 text-white w-full py-2 rounded mt-3">
+                Obtener ubicación
+            </button>
+
+            <p id="demo" class="text-center mt-2 text-sm"></p>
+        </div>
+
+        <div class="mt-8 border-t pt-6 border-violet-300">
+    <h2 class="text-xl font-bold text-violet-700 mb-4">Preguntas del laboratorio</h2>
+
+    <h3 class="font-semibold text-violet-600">
+        1. ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?
+    </h3>
+    <p class="text-sm text-gray-700 mt-1 mb-4">
+        Es una buena práctica porque la validación del lado del cliente permite detectar errores de captura de forma inmediata, sin necesidad de enviar primero la información al servidor. Esto mejora la experiencia del usuario, ya que puede corregir campos vacíos, formatos inválidos o inconsistencias en tiempo real. Además, reduce solicitudes innecesarias al servidor, lo que ayuda al desempeño general de la aplicación y hace más eficiente el flujo de interacción. MDN explica que la validación en cliente ayuda a asegurar que los datos capturados coincidan con los requisitos definidos en los controles del formulario, mientras que OWASP aclara que esta validación es útil para funcionalidad y usabilidad, pero no debe considerarse suficiente para seguridad. 
+    </p>
+
+    <h3 class="font-semibold text-violet-600">
+        2. ¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?
+    </h3>
+    <p class="text-sm text-gray-700 mt-1 mb-4">
+        Las validaciones hechas únicamente con JavaScript pueden omitirse porque se ejecutan en el navegador del usuario, es decir, en un entorno que no es confiable. De manera general, estas restricciones pueden evitarse desactivando JavaScript, alterando el HTML o el comportamiento del formulario desde las herramientas del navegador, o enviando peticiones directamente al servidor sin depender de la interfaz normal de la página. MDN señala expresamente que la validación del lado del cliente puede ser evitada al modificar el HTML en las herramientas de desarrollador, al construir manualmente una petición HTTP, o al escribir valores por código en ciertos campos sin pasar por las validaciones que se ejecutan con la interacción del usuario. Por eso, aunque sirve para guiar al usuario, no puede ser la única barrera de seguridad. 
+    </p>
+
+    <h3 class="font-semibold text-violet-600">
+        3. Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?
+    </h3>
+    <p class="text-sm text-gray-700 mt-1 mb-4">
+        Porque una buena práctica no significa que sea un mecanismo completo de seguridad, sino que cumple una función útil dentro del diseño de la aplicación. La validación con JavaScript ayuda a prevenir errores comunes de captura, ofrece retroalimentación inmediata y mejora la usabilidad del formulario. Eso hace que el sistema sea más cómodo y eficiente para el usuario. Sin embargo, la validación verdaderamente confiable debe realizarse también en el servidor, que sí es un entorno controlado por la aplicación. OWASP recomienda que toda validación de entrada se haga en un sistema confiable del lado del servidor, y MDN también indica que los datos del formulario siempre deben validarse en servidor de forma consistente con lo que se haga en cliente. En otras palabras, JavaScript no reemplaza la seguridad real; la complementa. 
+    </p>
+</div>
+
+<div class="mt-8 border-t pt-6 border-violet-300">
+    <h2 class="text-xl font-bold text-violet-700 mb-4">Fuentes consultadas</h2>
+    <ul class="text-sm text-violet-700 underline space-y-2 break-words">
+        <li><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
+        <li><a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">W3Schools - JavaScript HTML DOM</a></li>
+        <li><a href="https://www.w3schools.com/html/html5_geolocation.asp" target="_blank">W3Schools - HTML Geolocation API</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Forms/Form_validation" target="_blank">MDN - Validación de formularios del lado del cliente</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Constraint_validation" target="_blank">MDN - Constraint Validation API</a></li>
+        <li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html" target="_blank">OWASP - Input Validation Cheat Sheet</a></li>
+    </ul>
+</div>
         </div>
     </div>
+
     <script src="lab6.js"></script>
 </body>
 </html>
