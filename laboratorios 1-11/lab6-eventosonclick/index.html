@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Hugo Esquivel - Lab 6 Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 min-h-screen flex items-center justify-center p-6">
+    <div class="bg-white/90 backdrop-blur-sm shadow-2xl rounded-2xl p-8 w-full max-w-sm border-t-4 border-indigo-400 transform transition hover:scale-150">
+        <h1 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 text-center mb-4">
+            Lab 6: Eventos y comportamiento del DOM
+        </h1>
+        <div class="h-1 w-16 bg-indigo-400 mx-auto mb-6 rounded-full"></div>
+        <p class="text-center text-gray-700 font-bold tracking-widest uppercase text-xs">
+            Victor Hugo Esquivel Feregrino
+        </p>
+        
+        <div class="mt-6">
+            <input id="pass" type="password" placeholder="Espera 4 segundos.." class="border p-2 w-full mb-3 rounded">
+            <input id="confirm" type="password" placeholder="Es un placeholder, de Tailwind" class="border p-2 w-full mb-3 rounded">
+            <button id="btnValidar" class="bg-indigo-500 text-black w-full py-2 rounded hover:bg-indigo-600 transition-colors">
+                Botón para aceptar o validar
+            </button>
+            <p id="mensaje" class="text-center mt-3 text-sm font-medium"></p>
+            <button id="btnGeo" class="bg-green-500 text-white w-full py-2 rounded mt-3">
+Obtener ubicación
+</button>
+
+<p id="demo" class="text-center mt-2 text-sm"></p>
+        </div>
+    </div>
+    <script src="lab6.js"></script>
+</body>
+</html>
