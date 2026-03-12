@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab10 Manejo de Rutas</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 flex items-center justify-center font-sans">
+
+<div class="bg-white/20 backdrop-blur-md p-8 rounded-xl text-center text-white shadow-2xl">
+
+<h1 class="text-4xl font-extrabold mb-4">
+Lab10 Manejo de Rutas
+</h1>
+
+<p class="text-blue-300 font-semibold mb-4">
+Victor Esquivel Fere
+</p>
+
+<p class="mb-4 text-sm">
+Referencias:
+</p>
+
+<p class="text-sm">
+<a href="https://tailwindcss.com/docs/installation" class="text-yellow-200 underline">Tailwind CSS</a>
+</p>
+
+<p class="text-sm">
+<a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/" class="text-yellow-200 underline">The Node.js Event Loop</a>
+</p>
+
+<p class="text-sm mb-6">
+<a href="https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/" class="text-yellow-200 underline">Anatomy of an HTTP Transaction</a>
+</p>
+
+<form action="/enviar" method="POST" class="space-y-4">
+
+<input 
+type="text" 
+name="nombre" 
+placeholder="Mi nombre es edujuarez"
+required
+class="p-2 rounded text-black"
+/>
+
+<br>
+
+<button class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">
+No manda nada (aun guiño*)
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
