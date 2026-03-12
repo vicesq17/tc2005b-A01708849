@@ -8,14 +8,14 @@ function promedio(arreglo) {
     }
     return suma / arreglo.length;
 }
-
+console.log("Adentri del servidor de Node");
 console.log("Promedio:", promedio([5, 7, 10]));
 
 function escribirArchivo(texto) {
     fs.writeFileSync("texto.txt", texto);
 }
 
-escribirArchivo("Este archivo fue creado desde una función en Node");
+escribirArchivo("Archivo creado nuevamente");
 
 const server = http.createServer((request, response) => {
 
@@ -48,6 +48,13 @@ const server = http.createServer((request, response) => {
         response.end();
 
     }
+//Runge Kutta Para resolver ecuaciones diferenciales
+function rungeKutta(x0, y0, h, h) {
+    function f(x, y) {
+        return x + y;
+    }   
+    let k1 = h*f(x0, y0);
+
 
 });
 
