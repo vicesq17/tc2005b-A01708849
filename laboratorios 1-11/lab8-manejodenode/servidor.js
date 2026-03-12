@@ -64,6 +64,21 @@ const server = http.createServer((request, response) => {
             }
         });
 
+    } else if (request.url === "/lab4") {
+
+        fs.readFile("../lab4-js/index.html", (error, data) => {
+            if (error) {
+                response.writeHead(500, { "Content-Type": "text/plain" });
+                response.write("Error al leer lab4");
+                response.end();
+                return;
+            }
+
+            response.writeHead(200, { "Content-Type": "text/html" });
+            response.write(data);
+            response.end();
+        });
+
     } else if (request.url === "/rk") {
 
         const resultado = rungeKutta(0, 1, 0.1);
