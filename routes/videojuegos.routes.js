@@ -9,14 +9,14 @@ const html_header = `
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>Hecho con Bulma Bulma!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
   </head>
   <body>
   <section class="section">
     <div class="container">
       <h1 class="title">
-        Videojuegos
+        Ejemplo de Express-Ref. TCBVIDEOJUEGOS (EDUARDO)-Testing lab11 Víctor
       </h1>
       <p class="subtitle">
         My first website with <strong>Bulma</strong>!
@@ -53,12 +53,12 @@ const html_form = `
 
 const videojuegos = [
   {
-    nombre: "Minecraft",
-    imagen: "https://store-images.s-microsoft.com/image/apps.58378.13850085746326678.826cc014-d610-46af-bdb3-c5c96be4d22c.64287a91-c69e-4723-bb61-03fecd348c2a?q=90&w=480&h=270"
+    nombre: "BLACK|COFFEE",
+    imagen: "https://billboard.com.br/wp-content/uploads/2023/12/black-coffee-dj.jpg"
   },
   {
-    nombre: "Gears of war",
-    imagen: "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Gears_of_war_cover_art.jpg/250px-Gears_of_war_cover_art.jpg"
+    nombre: "UFC",
+    imagen: "https://tse1.mm.bing.net/th/id/OIP.1MW0xifYpXftllaN7PCHMwHaE8?pid=Api&P=0&h=180"
   },
 ];
 

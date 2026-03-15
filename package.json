@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ejuarezp/tc2005b_videojuegos.git"
+    "url": "git+https://github.com/vicesq17/tc2005b-A01708849.git"
   },
   "keywords": [
     "node",
@@ -18,12 +18,12 @@
     "express",
     "js"
   ],
-  "author": "Eduardo Juárez",
+  "author": "Victor Esquivel",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ejuarezp/tc2005b_videojuegos/issues"
+    "url": "https://github.com/vicesq17/tc2005b-A01708849/issues"
   },
-  "homepage": "https://github.com/ejuarezp/tc2005b_videojuegos#readme",
+  "homepage": "https://github.com/vicesq17/tc2005b-A01708849#readme",
   "dependencies": {
     "body-parser": "^2.2.2",
     "express": "^5.2.1"
