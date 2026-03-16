@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+
+<%- include('includes/head.ejs') %>
+
+<body class="min-h-screen bg-gradient-to-br from-blue-500 to-cyan-700 p-8 text-white font-sans">
+
+<header class="absolute top-4 right-4 text-right text-sm opacity-100">
+  <p class="font-bold">Victor Esquivel Fere</p>
+  <p>TC2005B - Lab 12</p>
+</header>
+
+<main class="mt-20">
+
+<h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">
+HTML Dinámico con EJS
+</h1>
+
+<section class="bg-white/20 backdrop-blur-md p-7 rounded-xl border border-cyan-300/30 shadow-2xl">
+
+<p class="text-xl">BACKEND TEMPLATE ENGINE</p>
+
+<p class="mt-4 text-lg">
+Motor de vistas utilizado: <%= motor %>
+</p>
+
+<p class="mt-4 text-lg">
+Servidor backend utilizando: <%= framework %>
+</p>
+
+<p class="mt-4 text-lg">
+Este laboratorio demuestra cómo generar HTML dinámico desde el backend utilizando Express y el motor de plantillas EJS.
+</p>
+
+<p class="mt-4 text-lg">
+Las variables mostradas en esta página son enviadas desde el servidor mediante <code>response.render()</code>.
+</p>
+
+<h2 class="mt-6 text-xl font-bold">Tecnologías usadas</h2>
+
+<ul class="mt-2 list-disc list-inside">
+<% for (let tech of tecnologias) { %>
+  <li><%= tech %></li>
+<% } %>
+</ul>
+
+</section>
+
+</main>
+
+<%- include('includes/footer.ejs') %>
+
+</body>
+</html>
