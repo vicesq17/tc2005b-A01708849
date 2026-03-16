@@ -1,13 +1,15 @@
-TC2005B – Construcción de Software
+# TC2005B – Construcción de Software
 
-Repositorio de prácticas y laboratorios del curso TC2005B.
+Repositorio de prácticas y laboratorios del curso **TC2005B**.
 
-El proyecto contiene varios laboratorios desarrollados durante el semestre.
-Algunos se ejecutan directamente desde HTML y otros utilizan Node.js + Express.
+El proyecto contiene varios laboratorios desarrollados durante el semestre.  
+Algunos se ejecutan directamente desde **HTML**, mientras que otros utilizan **Node.js + Express** para implementar funcionalidad de backend.
 
-Laboratorios 1 – 8
+---
 
-Los primeros laboratorios corresponden a ejercicios básicos de HTML, CSS y JavaScript.
+# Laboratorios 1 – 8
+
+Los primeros laboratorios corresponden a ejercicios básicos de **HTML, CSS y JavaScript**.
 
 Para visualizarlos:
 
@@ -23,151 +25,156 @@ Desde ese archivo se puede navegar a los laboratorios correspondientes.
 
 Estos laboratorios funcionan directamente en el navegador.
 
+---
 
-## Lab 11 – Express
+# Lab 11 – Express
 
 El **Lab 11** corresponde a la primera implementación de un servidor utilizando **Node.js + Express**.
 
-Ubicación del laboratorio dentro del repositorio:
+## Ubicación del laboratorio
 
 laboratorios 1-11/lab10-rutasyformularios
 
-Archivos principales:
+## Archivos principales
 
-servidor.js
-index.html
+servidor.js  
+index.html  
 datos.txt
 
-Funcionamiento:
+## Funcionamiento
 
-El servidor se ejecuta con Express y define varias rutas HTTP.
-Una de las rutas contiene un formulario que envía información al servidor mediante **POST**.
-El servidor recibe los datos y los guarda en el archivo **datos.txt** dentro del mismo proyecto.
+El servidor se ejecuta utilizando **Express** y define varias rutas HTTP.
 
-Para ejecutarlo:
+Una de las rutas contiene un formulario que envía información al servidor mediante **POST**.  
+El servidor recibe los datos enviados por el formulario y los guarda en el archivo **datos.txt** dentro del mismo proyecto.
 
-cd laboratorios 1-11/lab10-rutasyformularios
+## Ejecutar el laboratorio
+
+cd laboratorios 1-11/lab10-rutasyformularios  
 node servidor.js
 
-Luego abrir en el navegador:
+Después abrir en el navegador:
 
 http://localhost:3000
 
+---
 
-Lab 12
+# Lab 12 – Node.js + Express + EJS
 
-El Lab 12 introduce el uso de Node.js, Express y EJS.
+El **Lab 12** introduce el uso de **Node.js**, **Express** y el motor de plantillas **EJS** para generar HTML dinámico.
 
-Este laboratorio se encuentra integrado dentro de la aplicación principal del repositorio, cuyo punto de entrada es:
+Este laboratorio se encuentra integrado dentro de la **aplicación principal del repositorio**, cuyo punto de entrada es:
 
 app.js
 
-Para ejecutarlo:
+## Ejecutar el laboratorio
 
-npm install
+npm install  
 node app.js
 
 Después abrir en el navegador:
 
 http://localhost:3000
 
+---
 
-Lab 13 – Arquitectura MVC
+# Lab 13 – Arquitectura MVC
 
-El Lab 13 implementa una aplicación utilizando el patrón arquitectónico MVC (Modelo-Vista-Controlador).
+El **Lab 13** implementa una aplicación utilizando el patrón arquitectónico **MVC (Modelo-Vista-Controlador)**.
 
-Ubicación del laboratorio:
+## Ubicación
 
 lab13-mvc
 
-Estructura principal:
+## Estructura principal
 
-controllers/
-models/
-routes/
-views/
-public/
+controllers/  
+models/  
+routes/  
+views/  
+public/  
 app.js
 
-Funcionamiento:
+## Funcionamiento
 
-Model: Maneja los datos de los peleadores.
+**Model**  
+Maneja los datos de los peleadores.
 
-View: Renderiza la interfaz utilizando EJS.
+**View**  
+Renderiza la interfaz utilizando **EJS**.
 
-Controller: Gestiona las peticiones HTTP y conecta modelo y vista.
+**Controller**  
+Gestiona las peticiones HTTP y conecta modelo y vista.
 
-Routes: Define las rutas disponibles en la aplicación.
+**Routes**  
+Define las rutas disponibles en la aplicación.
 
-Para ejecutarlo:
+## Ejecutar el laboratorio
 
-cd lab13-mvc
-npm install
+cd lab13-mvc  
+npm install  
 npm start
 
 Abrir en el navegador:
 
 http://localhost:3000
 
-La aplicación permite:
+## Funcionalidad
 
-Visualizar una lista de peleadores UFC
-
+Visualizar una lista de peleadores UFC  
 Agregar nuevos peleadores mediante un formulario
 
+---
 
+# Lab 14 – Manejo de Sesiones y Cookies
 
-Lab 14 – Manejo de Sesiones y Cookies
+El **Lab 14** extiende el laboratorio anterior agregando manejo de **sesiones y cookies** utilizando **express-session**.
 
-El Lab 14 extiende el laboratorio anterior agregando manejo de sesiones y cookies utilizando express-session.
-
-Ubicación:
+## Ubicación
 
 lab14-sesiones-cookies
 
-Funcionalidad añadida:
+## Funcionalidad añadida
 
-Uso de express-session
+Uso de **express-session**  
+Contador de visitas almacenado en sesión  
+Creación de cookies mediante el header **Set-Cookie**  
+Lectura de cookies desde el **request**
 
-Contador de visitas almacenado en sesión
+## Ejecutar el laboratorio
 
-Creación de cookies mediante el header Set-Cookie
-
-Lectura de cookies desde el request
-
-Para ejecutarlo:
-
-cd lab14-sesiones-cookies
-npm install
+cd lab14-sesiones-cookies  
+npm install  
 npm start
 
 Abrir en el navegador:
 
 http://localhost:3000
 
-Comportamiento esperado:
+## Comportamiento esperado
 
-Cada vez que se recarga la página se incrementa el contador de visitas almacenado en la sesión.
+Cada vez que se recarga la página se incrementa el **contador de visitas almacenado en la sesión**.
 
-El servidor envía una cookie llamada ultima_visita.
+El servidor envía una cookie llamada:
 
-Las cookies se pueden observar desde las herramientas de desarrollador del navegador.
+ultima_visita
 
-Tecnologías utilizadas
+Las cookies se pueden observar desde las **herramientas de desarrollador del navegador**.
 
-Node.js
+---
 
-Express
+# Tecnologías utilizadas
 
-EJS
-
-express-session
-
-HTML / CSS / JavaScript
-
+Node.js  
+Express  
+EJS  
+express-session  
+HTML / CSS / JavaScript  
 TailwindCSS
 
-Autor
+---
 
-Victor Esquivel Fere
+# Autor
+
+Victor Esquivel Fere  
 TC2005B – Tecnológico de Monterrey
