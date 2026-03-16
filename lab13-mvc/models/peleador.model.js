@@ -1,12 +1,12 @@
 const peleadores = [
     {
         nombre: "Jon Jones",
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Jon_Jones_2023.png",
+        imagen: "/images/Jones.jpg",
         division: "Heavyweight"
     },
     {
         nombre: "Islam Makhachev",
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/0/06/Islam_Makhachev_2023.png",
+        imagen: "/images/Islam.jpg",
         division: "Lightweight"
     }
 ];
