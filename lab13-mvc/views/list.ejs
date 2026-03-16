@@ -15,41 +15,56 @@
 
 <main class="mt-20">
 
-<h1 class="text-5xl font-extrabold mb-6 drop-shadow-lg">
-Peleadores UFC
-</h1>
+  <h1 class="text-5xl font-extrabold mb-8 drop-shadow-lg">
+    Peleadores UFC
+  </h1>
 
-<section class="bg-white/20 backdrop-blur-md p-7 rounded-xl border border-indigo-300/30 shadow-2xl">
+  <section class="bg-white/20 backdrop-blur-md p-7 rounded-xl border border-indigo-300/30 shadow-2xl mb-12">
+    
+    <a href="/peleadores/new">
+      <button class="bg-indigo-500 hover:bg-indigo-600 transition-colors px-6 py-2 rounded-lg font-bold shadow-md">
+        Agregar Peleador
+      </button>
+    </a>
 
-<a href="/peleadores/new">
-<button class="bg-indigo-500 px-4 py-2 rounded-lg">
-Agregar Peleador
-</button>
-</a>
+    <br><br>
 
-<br><br>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <% for (let peleador of peleadores) { %>
+        <div class="bg-black/30 p-4 rounded-lg hover:scale-105 transition-transform">
+          <h2 class="text-xl font-bold border-b border-white/20 pb-2"><%= peleador.nombre %></h2>
+          <p class="text-sm opacity-80 mt-2">
+            División: <%= peleador.division %>
+          </p>
+          <img src="<%= peleador.imagen %>" class="mt-3 rounded-lg w-full h-48 object-cover">
+        </div>
+      <% } %>
+    </div>
+  </section>
 
-<div class="grid grid-cols-3 gap-6">
+  <section class="bg-black/40 p-8 rounded-xl border border-white/10 shadow-inner">
+    <div class="space-y-6">
+      <div>
+        <p class="text-xl font-black text-white mb-2">
+          ¿Qué beneficios encuentras en el estilo MVC?
+        </p>
+        <p class="italic text-[#ff00ff] leading-relaxed">
+          El patrón Modelo-Vista-Controlador permite separar la lógica de la aplicación en tres componentes independientes. El modelo se encarga de manejar los datos y la lógica del negocio, la vista presenta la información al usuario y el controlador coordina la interacción entre ambos. Esta separación facilita el mantenimiento del código, mejora la organización del proyecto y permite escalar la aplicación de manera más sencilla.
+        </p>
+      </div>
 
-<% for (let peleador of peleadores) { %>
+      <hr class="border-white/10">
 
-<div class="bg-black/30 p-4 rounded-lg">
-
-<h2 class="text-xl font-bold"><%= peleador.nombre %></h2>
-
-<p class="text-sm opacity-80">
-División: <%= peleador.division %>
-</p>
-
-<img src="<%= peleador.imagen %>" class="mt-3 rounded-lg">
-
-</div>
-
-<% } %>
-
-</div>
-
-</section>
+      <div>
+        <p class="text-xl font-black text-white mb-2">
+          ¿Encuentras alguna desventaja en el estilo arquitectónico MVC?
+        </p>
+        <p class="italic text-[#ff00ff] leading-relaxed">
+          Una desventaja del estilo MVC es que introduce una estructura más compleja que puede resultar excesiva para aplicaciones pequeñas. Al separar el código en varias capas se incrementa el número de archivos y la cantidad de comunicación entre componentes, lo cual puede hacer que el desarrollo inicial sea más lento si no se tiene experiencia con este patrón.
+        </p>
+      </div>
+    </div>
+  </section>
 
 </main>
 
