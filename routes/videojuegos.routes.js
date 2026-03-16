@@ -33,7 +33,7 @@ const html_footer = `
 `;
 
 const html_form = `
-<form action="/new" method="POST">
+<form action="/videojuegos/new" method="POST">
   <div class="field">
     <label for="nombre" class="label">Nombre</label>
     <div class="control">
@@ -95,7 +95,7 @@ router.get('/old', (request, response, next) => {
 router.use((request, response, next) => {
     console.log('Otro middleware!');
     let html_index = `
-              <a href="/new"><button class="button is-primary">Nuevo videojuego</button></a>
+              <a href="/videojuegos/new"><button class="button is-primary">Nuevo videojuego</button></a>
               <div class="columns">`;
 
         for (let juego of videojuegos) {
