@@ -22,6 +22,14 @@ exports.get_list = (request, response, next) => {
         request.session.visitas++;
     }
 
+    response.setHeader(
+        'Set-Cookie',
+        'ultima_visita=' + new Date().toISOString() + '; HttpOnly'
+    );
+
+    const cookies = request.get('Cookie');
+    console.log('Cookies del navegador:', cookies);
+
     const peleadores = Peleador.fetchAll();
 
     response.render('list', {
