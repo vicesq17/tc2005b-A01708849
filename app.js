@@ -16,7 +16,7 @@ app.use((request, response, next) => {
 });
 
 app.use((request, response, next) => {
-    response.status(404).send('CallbAck de error');
+    response.status(404).send('CallbAck de error 2.0 de mi ruta de labs');
 });
 
 app.listen(3000);

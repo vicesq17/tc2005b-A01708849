@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
 const path = require('path')
 
@@ -74,6 +75,16 @@ router.get('/new', (request, response, next) => {
 
 router.post('/new', (request, response, next) => {
     videojuegos.push(request.body);
+
+    const datos = `Juego: ${request.body.nombre} | Imagen: ${request.body.imagen}\n`;
+    
+    fs.appendFile('videojuegos.txt', datos, (err) => {
+        if (err) {
+            console.log("Error al meter tu juego", err);
+        } else {
+            console.log("Datos guardados en los videojuegos");
+        }
+    });
     response.redirect('/videojuegos');
 });
 
