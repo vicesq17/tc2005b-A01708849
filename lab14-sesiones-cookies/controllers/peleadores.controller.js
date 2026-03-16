@@ -15,6 +15,17 @@ exports.post_new = (request, response, next) => {
 };
 
 exports.get_list = (request, response, next) => {
+
+    if (!request.session.visitas) {
+        request.session.visitas = 1;
+    } else {
+        request.session.visitas++;
+    }
+
     const peleadores = Peleador.fetchAll();
-    response.render('list', { peleadores: peleadores });
+
+    response.render('list', {
+        peleadores: peleadores,
+        visitas: request.session.visitas
+    });
 };
