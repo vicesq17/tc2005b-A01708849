@@ -174,6 +174,99 @@ TailwindCSS
 
 ---
 
+
+Lab 17 – Integración con Base de Datos (MySQL + MVC)
+
+El Lab 17 extiende la arquitectura MVC implementada en los laboratorios anteriores, incorporando persistencia de datos mediante una base de datos MySQL utilizando el paquete mysql2.
+
+Ubicación
+lab14-sesiones-cookies
+
+Estructura relevante
+controllers/
+models/
+routes/
+views/
+util/database.js
+
+Funcionamiento
+
+Model
+Se conecta a la base de datos mediante mysql2 y ejecuta consultas SQL utilizando prepared statements.
+
+Se implementaron los siguientes métodos:
+save() → inserta un nuevo peleador en la base de datos
+fetchAll() → obtiene todos los peleadores
+fetchOne(id) → obtiene un peleador por ID
+update(id, nombre, imagen, division) → actualiza un peleador existente
+
+Controller
+Maneja la lógica de negocio y ahora trabaja con promesas provenientes de la base de datos.
+
+Se encarga de:
+Guardar nuevos peleadores
+Obtener lista desde MySQL
+Obtener detalle individual
+Renderizar vistas dinámicas con datos reales
+
+View
+Se actualizan las vistas EJS para renderizar datos provenientes de la base de datos en lugar de datos estáticos.
+
+Se agrega:
+list.ejs → listado dinámico de peleadores
+detail.ejs → vista individual de un peleador
+
+Routes
+Se agregan rutas dinámicas:
+
+GET /peleadores → lista de peleadores
+GET /peleadores/new → formulario
+POST /peleadores/new → creación
+GET /peleadores/:peleador_id → detalle individual
+
+Base de Datos
+
+Tabla utilizada:
+peleadores
+
+Estructura:
+id (INT, PK, AUTO_INCREMENT)
+nombre (VARCHAR)
+imagen (VARCHAR)
+division (VARCHAR)
+
+Ejecutar el laboratorio
+
+cd lab14-sesiones-cookies
+npm install
+npm start
+
+Abrir en el navegador:
+
+http://localhost:3000/peleadores
+
+Comportamiento esperado
+
+Los peleadores ahora se almacenan de forma persistente en la base de datos MySQL.
+
+Al agregar un nuevo peleador:
+Se guarda en la base de datos
+Se refleja automáticamente en la vista
+
+Se puede acceder a un detalle individual mediante la URL:
+/peleadores/:id
+
+Tecnologías utilizadas
+
+Node.js
+Express
+EJS
+MySQL
+mysql2
+express-session
+HTML / CSS / JavaScript
+TailwindCSS
+
 # Autor
 
 Victor Esquivel Fere  
