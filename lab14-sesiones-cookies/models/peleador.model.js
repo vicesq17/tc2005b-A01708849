@@ -1,15 +1,4 @@
-const peleadores = [
-    {
-        nombre: "Jon Jones",
-        imagen: "/images/Jones.jpg",
-        division: "Heavyweight"
-    },
-    {
-        nombre: "Islam Makhachev",
-        imagen: "/images/Islam.jpg",
-        division: "Lightweight"
-    }
-];
+const db = require('../util/database');
 
 module.exports = class Peleador {
 
@@ -20,11 +9,28 @@ module.exports = class Peleador {
     }
 
     save() {
-        peleadores.push(this);
+        return db.execute(
+            'INSERT INTO peleadores (nombre, imagen, division) VALUES (?, ?, ?)',
+            [this.nombre, this.imagen, this.division]
+        );
     }
 
     static fetchAll() {
-        return peleadores;
+        return db.execute('SELECT * FROM peleadores');
+    }
+
+    static fetchOne(id) {
+        return db.execute(
+            'SELECT * FROM peleadores WHERE id = ?',
+            [id]
+        );
+    }
+
+    static update(id, nombre, imagen, division) {
+        return db.execute(
+            'UPDATE peleadores SET nombre=?, imagen=?, division=? WHERE id=?',
+            [nombre, imagen, division, id]
+        );
     }
 
 }

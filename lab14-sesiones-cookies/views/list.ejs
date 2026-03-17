@@ -10,7 +10,7 @@
 
 <header class="absolute top-4 right-4 text-right text-sm opacity-100">
 <p class="font-bold">Victor Esquivel Fere</p>
-<p>TC2005B - Lab 14</p>
+<p>TC2005B - Lab 17</p>
 </header>
 
 <main class="mt-20">
@@ -20,8 +20,7 @@ Peleadores UFC
 </h1>
 
 <p class="mb-6 text-lg">
-Visitas durante esta sesión: <%= visitas %> //uso de variable de sesión para contar visitas-ref: // https://expressjs.com/en/resources/middleware/session.html
-
+Visitas durante esta sesión: <%= visitas %>
 </p>
 
 <p class="mb-10 text-sm">
@@ -47,15 +46,29 @@ Agregar Peleador
 <br><br>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
 <% for (let peleador of peleadores) { %>
+
 <div class="bg-black/30 p-4 rounded-lg hover:scale-105 transition-transform">
-<h2 class="text-xl font-bold border-b border-white/20 pb-2"><%= peleador.nombre %></h2>
+
+<h2 class="text-xl font-bold border-b border-white/20 pb-2">
+<%= peleador.nombre %>
+</h2>
+
 <p class="text-sm opacity-80 mt-2">
 División: <%= peleador.division %>
 </p>
+
 <img src="<%= peleador.imagen %>" class="mt-3 rounded-lg w-full h-48 object-cover">
+
+<a href="/peleadores/<%= peleador.id %>" class="underline text-sm block mt-3">
+Ver detalle
+</a>
+
 </div>
+
 <% } %>
+
 </div>
 
 </section>
@@ -69,25 +82,67 @@ Lab 14 Preguntas
 <div class="space-y-6">
 
 <div>
+
 <p class="text-xl font-black text-white mb-2">
-¿bENEFICIOS?
+¿Beneficios del estilo MVC?
 </p>
 
 <p class="italic text-green-400 leading-relaxed">
-El estilo arquitectónico Modelo Vista Controlador permite separar claramente las responsabilidades dentro de una aplicación. El modelo se encarga de la gestión de datos y lógica de negocio, la vista se ocupa de presentar la información al usuario y el controlador coordina la comunicación entre ambas partes. Esta separación mejora la organización del código, facilita el mantenimiento y permite escalar la aplicación con mayor facilidad, ya que cada componente puede modificarse sin afectar directamente a los demás.
+El estilo arquitectónico Modelo Vista Controlador permite separar claramente las responsabilidades dentro de una aplicación. El modelo se encarga de la gestión de datos y lógica de negocio, la vista se ocupa de presentar la información al usuario y el controlador coordina la comunicación entre ambas partes. Esta separación mejora la organización del código, facilita el mantenimiento y permite escalar la aplicación con mayor facilidad.
 </p>
+
 </div>
 
 <hr class="border-white/10">
 
 <div>
+
 <p class="text-xl font-black text-white mb-2">
-Encuentras alguna desventaja en el estilo  MVC?
+¿Desventajas del estilo MVC?
 </p>
 
 <p class="italic text-green-400 leading-relaxed">
-Una posible desventaja del patrOn MVC es que introduce una mayor complejidad estructural, especialmente en aplicaciones pequeñas. La separación en múltiples capas puede generar más archivos y una comunicación más extensa entre componentes, lo que puede aumentar el tiempo inicial de desarrollo si no se tiene experiencia con este modelo arquitectónico.
+Una desventaja del patrón MVC es que introduce una mayor complejidad estructural, especialmente en aplicaciones pequeñas. La separación en múltiples capas genera más archivos y mayor comunicación entre componentes, lo que puede aumentar el tiempo inicial de desarrollo si no se tiene experiencia con este modelo arquitectónico.
 </p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="bg-black/40 p-8 rounded-xl border border-white/10 shadow-inner mt-12">
+
+<h2 class="text-2xl font-bold mb-6">
+Lab 17 Preguntas
+</h2>
+
+<div class="space-y-6">
+
+<div>
+
+<p class="text-xl font-black text-white mb-2">
+¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
+</p>
+
+<p class="italic text-green-400 leading-relaxed">
+Colocar las consultas SQL en el modelo permite mantener la separación de responsabilidades del patrón MVC. El modelo se encarga de acceder a la base de datos, el controlador maneja la lógica de la aplicación y la vista se dedica a mostrar la información al usuario. Esto facilita el mantenimiento, mejora la organización del código y permite modificar la base de datos sin afectar directamente otras partes del sistema.
+</p>
+
+</div>
+
+<hr class="border-white/10">
+
+<div>
+
+<p class="text-xl font-black text-white mb-2">
+¿Qué es SQL Injection y cómo se puede prevenir?
+</p>
+
+<p class="italic text-green-400 leading-relaxed">
+SQL Injection es un ataque en el que un usuario introduce código SQL malicioso dentro de los campos de entrada de una aplicación con el objetivo de manipular las consultas de la base de datos. Esto puede permitir acceder, modificar o eliminar información sensible. Se previene utilizando consultas parametrizadas o prepared statements, como las que ofrece mysql2 con signos de interrogación en las consultas, lo que asegura que los datos del usuario se traten únicamente como datos y no como código ejecutable.
+</p>
+
 </div>
 
 </div>
