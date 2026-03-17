@@ -1,0 +1,137 @@
+TC2005B Construcción de Software y Toma de Decisiones
+
+Ejercicio SQL con Subconsultas y sin Subconsultas
+
+1. Actrices de “Las brujas de Salem”
+
+Con subconsulta:
+SELECT nombre
+FROM Actor
+WHERE sexo = 'F'
+AND nombre IN (
+    SELECT nombre
+    FROM Elenco
+    WHERE titulo = 'Las brujas de Salem'
+);
+
+Sin subconsulta:
+SELECT A.nombre
+FROM Actor A
+JOIN Elenco E ON A.nombre = E.nombre
+WHERE E.titulo = 'Las brujas de Salem'
+AND A.sexo = 'F';
+
+
+2. Nombres de los actores que aparecen en películas producidas por MGM en 1995
+
+Con subconsulta:
+SELECT nombre
+FROM Actor
+WHERE nombre IN (
+    SELECT E.nombre
+    FROM Elenco E
+    WHERE E.titulo IN (
+        SELECT P.titulo
+        FROM Pelicula P
+        WHERE P.nomestudio = 'MGM'
+        AND P.año = 1995
+    )
+);
+
+Sin subconsulta:
+SELECT DISTINCT A.nombre
+FROM Actor A
+JOIN Elenco E ON A.nombre = E.nombre
+JOIN Pelicula P ON E.titulo = P.titulo AND E.año = P.año
+WHERE P.nomestudio = 'MGM'
+AND P.año = 1995;
+
+
+3. Películas que duran más que “Lo que el viento se llevó” (1939)
+
+Con subconsulta:
+SELECT titulo
+FROM Pelicula
+WHERE duracion > (
+    SELECT duracion
+    FROM Pelicula
+    WHERE titulo = 'Lo que el viento se llevó'
+    AND año = 1939
+);
+
+Sin subconsulta:
+SELECT P1.titulo
+FROM Pelicula P1
+JOIN Pelicula P2 
+ON P2.titulo = 'Lo que el viento se llevó' 
+AND P2.año = 1939
+WHERE P1.duracion > P2.duracion;
+
+
+4. Productores que han hecho más películas que George Lucas
+
+Con subconsulta:
+SELECT nombre
+FROM Productor
+WHERE idproductor IN (
+    SELECT idproductor
+    FROM Pelicula
+    GROUP BY idproductor
+    HAVING COUNT(*) > (
+        SELECT COUNT(*)
+        FROM Pelicula
+        WHERE idproductor = (
+            SELECT idproductor
+            FROM Productor
+            WHERE nombre = 'George Lucas'
+        )
+    )
+);
+
+Sin subconsulta:
+SELECT PR.nombre
+FROM Productor PR
+JOIN Pelicula P1 ON PR.idproductor = P1.idproductor
+JOIN Productor GL ON GL.nombre = 'George Lucas'
+JOIN Pelicula P2 ON GL.idproductor = P2.idproductor
+GROUP BY PR.nombre
+HAVING COUNT(DISTINCT P1.titulo) > COUNT(DISTINCT P2.titulo);
+
+
+5. Nombres de los productores de las películas en las que ha aparecido Sharon Stone
+
+Con subconsulta:
+SELECT nombre
+FROM Productor
+WHERE idproductor IN (
+    SELECT idproductor
+    FROM Pelicula
+    WHERE titulo IN (
+        SELECT titulo
+        FROM Elenco
+        WHERE nombre = 'Sharon Stone'
+    )
+);
+
+Sin subconsulta:
+SELECT DISTINCT PR.nombre
+FROM Productor PR
+JOIN Pelicula P ON PR.idproductor = P.idproductor
+JOIN Elenco E ON P.titulo = E.titulo AND P.año = E.año
+WHERE E.nombre = 'Sharon Stone';
+
+
+6. Título de las películas que han sido filmadas más de una vez
+
+Con subconsulta:
+SELECT titulo
+FROM Pelicula
+GROUP BY titulo
+HAVING COUNT(*) > 1;
+
+Sin subconsulta:
+SELECT DISTINCT P1.titulo
+FROM Pelicula P1
+JOIN Pelicula P2 
+ON P1.titulo = P2.titulo 
+AND P1.año <> P2.año;
