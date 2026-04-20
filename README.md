@@ -267,6 +267,9 @@ express-session
 HTML / CSS / JavaScript
 TailwindCSS
 
+Script de apoyo: script_lab17_peleadores.sql, el cual permite recrear la base de datos peleadores_db, la tabla peleadores y cargar datos iniciales de prueba.
+Para el funcionamiento del laboratorio se actualizó el archivo util/database.js para conectar la aplicación con la base de datos peleadores_db.
+
 # Autor
 
 Victor Esquivel Fere  
