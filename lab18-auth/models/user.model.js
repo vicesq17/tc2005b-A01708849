@@ -20,4 +20,11 @@ module.exports = class User {
             [email]
         );
     }
+
+    static updateArchivo(id, archivo) {
+        return db.execute(
+            'UPDATE usuarios SET archivo = ? WHERE id = ?',
+            [archivo, id]
+        );
+    }
 };

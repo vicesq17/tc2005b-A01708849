@@ -16,6 +16,18 @@
 <a href="/subir" class="bg-emerald-700 px-4 py-2 rounded">Subir archivo</a>
 </div>
 
+<% if (archivo) { %>
+<div class="mb-6 bg-white/10 p-4 rounded-lg">
+<p class="font-semibold mb-3">Archivo actual subido:</p>
+<img src="/<%= archivo %>" alt="Archivo subido" class="max-w-full rounded-lg mb-3">
+<a href="/<%= archivo %>" target="_blank" class="underline">Abrir archivo en nueva pestaña</a>
+</div>
+<% } else { %>
+<div class="mb-6 bg-white/10 p-4 rounded-lg">
+<p>Aún no has subido ningún archivo.</p>
+</div>
+<% } %>
+
 <form action="/logout" method="POST">
 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 <button class="bg-red-600 px-4 py-2 rounded">Cerrar sesión</button>

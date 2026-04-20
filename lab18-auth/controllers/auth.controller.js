@@ -63,7 +63,8 @@ exports.postLogout = (req, res) => {
 
 exports.getPortal = (req, res) => {
     res.render('portal', {
-        nombre: req.session.user.nombre
+        nombre: req.session.user.nombre,
+        archivo: req.session.user.archivo
     });
 };
 
@@ -78,5 +79,12 @@ exports.postSubir = (req, res) => {
         return res.redirect('/subir');
     }
 
-    return res.redirect('/portal');
+    const rutaArchivo = archivo.path.replace(/\\/g, '/');
+
+    User.updateArchivo(req.session.user.id, rutaArchivo)
+    .then(() => {
+        req.session.user.archivo = rutaArchivo;
+        res.redirect('/portal');
+    })
+    .catch(err => console.log(err));
 };
