@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Subir archivo</title>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-emerald-500 via-green-400 to-teal-600 p-8 text-white font-sans">
+<main class="max-w-2xl mx-auto mt-16 bg-black/20 p-8 rounded-xl">
+<h1 class="text-4xl font-bold mb-4">Subir archivo al portal</h1>
+<p class="mb-6">Lab 22 integrado al portal autenticado del Lab 18.</p>
+<p class="text-sm italic mb-6">Parte de esta lógica ya se había trabajado previamente en el proyecto del socio formador.</p>
+
+<form action="/subir" method="POST" enctype="multipart/form-data" class="space-y-4">
+<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+<input type="file" name="archivo" class="w-full p-2 rounded bg-white text-black" required>
+<button class="bg-emerald-700 px-4 py-2 rounded">Subir archivo</button>
+</form>
+
+<p class="mt-6">
+<a href="/portal" class="underline">Volver al portal</a>
+</p>
+</main>
+</body>
+</html>

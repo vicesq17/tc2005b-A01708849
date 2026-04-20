@@ -17,14 +17,12 @@ exports.postRegister = (req, res) => {
         if (rows.length > 0) {
             return res.redirect('/register');
         }
+
         return bcrypt.hash(password, 12)
         .then(hashedPassword => {
             const user = new User(nombre, email, hashedPassword);
-            return user.save();
+            return user.save().then(() => res.redirect('/login'));
         });
-    })
-    .then(() => {
-        res.redirect('/login');
     })
     .catch(err => console.log(err));
 };
@@ -38,6 +36,7 @@ exports.postLogin = (req, res) => {
         if (rows.length === 0) {
             return res.redirect('/login');
         }
+
         loadedUser = rows[0];
         return bcrypt.compare(password, loadedUser.password);
     })
@@ -45,8 +44,10 @@ exports.postLogin = (req, res) => {
         if (!doMatch) {
             return res.redirect('/login');
         }
+
         req.session.isLoggedIn = true;
         req.session.user = loadedUser;
+
         req.session.save(err => {
             res.redirect('/portal');
         });
@@ -64,4 +65,18 @@ exports.getPortal = (req, res) => {
     res.render('portal', {
         nombre: req.session.user.nombre
     });
+};
+
+exports.getSubir = (req, res) => {
+    res.render('subir');
+};
+
+exports.postSubir = (req, res) => {
+    const archivo = req.file;
+
+    if (!archivo) {
+        return res.redirect('/subir');
+    }
+
+    return res.redirect('/portal');
 };
