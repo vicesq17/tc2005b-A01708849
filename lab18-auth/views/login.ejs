@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Login</title>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-emerald-500 via-green-400 to-teal-600 p-8 text-white font-sans">
+<main class="max-w-xl mx-auto mt-16 bg-black/20 p-8 rounded-xl">
+<h1 class="text-4xl font-bold mb-4">Portal UFC Gym</h1>
+<p class="mb-6">Autenticación de usuarios con Express, sesiones y bcrypt.</p>
+<p class="text-sm italic mb-6">Parte de esta lógica ya se había trabajado previamente en el proyecto del socio formador.</p>
+
+<form action="/login" method="POST" class="space-y-4">
+<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+<input type="email" name="email" placeholder="Correo" class="w-full p-2 rounded text-black" required>
+<input type="password" name="password" placeholder="Contraseña" class="w-full p-2 rounded text-black" required>
+<button class="bg-emerald-700 px-4 py-2 rounded">Iniciar sesión</button>
+</form>
+
+<p class="mt-4"><a href="/register" class="underline">Crear cuenta</a></p>
+</main>
+</body>
+</html>
