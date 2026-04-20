@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Lab 26 - Servicio web</title>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-500 to-pink-500 p-8 text-white font-sans">
+<main class="max-w-5xl mx-auto mt-16 bg-black/20 p-8 rounded-xl">
+<h1 class="text-4xl font-bold mb-4">Lab 26 - Integración con servicio web</h1>
+<p class="mb-3">Usuario autenticado: <strong><%= nombre %></strong></p>
+<p class="mb-6">
+Se integró Vimeo oEmbed como servicio web de terceros para obtener metadatos y el código de inserción de un video dentro de la aplicación.
+</p>
+
+<section class="mb-8 bg-white/10 p-6 rounded-lg">
+<h2 class="text-2xl font-bold mb-4">Resultado del servicio web</h2>
+<p class="mb-2"><strong>Título:</strong> <%= video.title %></p>
+<p class="mb-2"><strong>Autor:</strong> <%= video.author_name %></p>
+<p class="mb-4"><strong>Proveedor:</strong> <%= video.provider_name %></p>
+
+<img src="<%= video.thumbnail_url %>" alt="Thumbnail" class="rounded-lg mb-4 max-w-full">
+
+<div class="bg-black/30 p-4 rounded-lg">
+<%- video.html %>
+</div>
+</section>
+
+<section class="mb-8 bg-white/10 p-6 rounded-lg">
+<h2 class="text-2xl font-bold mb-4">Pregunta del laboratorio</h2>
+<p class="mb-2"><strong>¿Qué ventajas y desventajas tiene integrar servicios web de terceros?</strong></p>
+<p>
+Como ventajas, permiten agregar funcionalidad avanzada sin desarrollarla desde cero, reducen tiempo de implementación y amplían las capacidades de la aplicación. Como desventajas, generan dependencia de servicios externos, posibles cambios en disponibilidad o políticas del API, y riesgos asociados a límites de uso, costos, autenticación y seguridad.
+</p>
+</section>
+
+<a href="/portal" class="underline">Volver al portal</a>
+</main>
+</body>
+</html>

@@ -7,15 +7,16 @@
 <title>Portal privado</title>
 </head>
 <body class="min-h-screen bg-gradient-to-br from-emerald-500 via-green-400 to-teal-600 p-8 text-white font-sans">
-<main class="max-w-3xl mx-auto mt-16 bg-black/20 p-8 rounded-xl">
+<main class="max-w-4xl mx-auto mt-16 bg-black/20 p-8 rounded-xl">
 <h1 class="text-4xl font-bold mb-4">Bienvenido, <%= nombre %></h1>
 <p class="mb-6">Esta es una ruta protegida del Lab 18.</p>
 <p class="text-sm italic mb-6">Parte de esta lógica ya se había trabajado previamente en el proyecto del socio formador.</p>
 
 <input type="hidden" id="_csrf" value="<%= csrfToken %>">
 
-<div class="flex gap-4 mb-6">
+<div class="flex gap-4 mb-6 flex-wrap">
 <a href="/subir" class="bg-emerald-700 px-4 py-2 rounded">Subir archivo</a>
+<a href="/servicio-web" class="bg-purple-700 px-4 py-2 rounded">Ver servicio web</a>
 <button type="button" id="btnAjax" class="bg-blue-700 px-4 py-2 rounded">Consultar estado por AJAX</button>
 </div>
 
@@ -39,18 +40,6 @@ Botón que consulta de forma asíncrona al servidor el estado del archivo subido
 <div id="resultadoAjax" class="bg-white/10 p-3 rounded">
 Aún no se ha realizado la consulta AJAX.
 </div>
-</section>
-
-<section class="mb-6 bg-black/20 p-4 rounded-lg">
-<h2 class="text-xl font-bold mb-2">Preguntas Lab 24</h2>
-<p class="mb-2"><strong>¿Qué importancia tiene AJAX en el desarrollo de RIA's?</strong></p>
-<p class="mb-4">AJAX permite que una aplicación actualice partes de la interfaz sin recargar toda la página, lo que mejora la experiencia del usuario y hace que la aplicación se comporte de forma más interactiva y dinámica.</p>
-
-<p class="mb-2"><strong>¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones?</strong></p>
-<p class="mb-4">AJAX implica riesgos como manipulación de peticiones, robo de tokens o envío de datos maliciosos. Las validaciones nunca deben depender únicamente del cliente; deben hacerse principalmente del lado del servidor, aunque en el cliente también se pueden realizar validaciones de apoyo.</p>
-
-<p class="mb-2"><strong>¿Qué es JSON?</strong></p>
-<p>JSON es un formato ligero de intercambio de datos basado en texto, organizado en pares llave-valor, y es ampliamente utilizado para la comunicación entre cliente y servidor en aplicaciones web.</p>
 </section>
 
 <form action="/logout" method="POST">

@@ -98,3 +98,21 @@ exports.postArchivoInfoAjax = (req, res) => {
             : 'El usuario todavía no ha subido ningún archivo.'
     });
 };
+
+exports.getServicioWeb = async (req, res) => {
+    try {
+        const videoUrl = 'https://vimeo.com/76979871';
+        const apiUrl = `https://vimeo.com/api/oembed.json?url=${encodeURIComponent(videoUrl)}`;
+
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        res.render('servicio-web', {
+            nombre: req.session.user.nombre,
+            video: data
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send('Error al consumir el servicio web');
+    }
+};

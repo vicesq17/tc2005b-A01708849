@@ -7,5 +7,6 @@ router.get('/portal', isAuth, authController.getPortal);
 router.get('/subir', isAuth, authController.getSubir);
 router.post('/subir', isAuth, authController.postSubir);
 router.post('/ajax/archivo-info', isAuth, authController.postArchivoInfoAjax);
+router.get('/servicio-web', isAuth, authController.getServicioWeb);
 
 module.exports = router;
