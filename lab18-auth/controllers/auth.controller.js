@@ -88,3 +88,13 @@ exports.postSubir = (req, res) => {
     })
     .catch(err => console.log(err));
 };
+
+exports.postArchivoInfoAjax = (req, res) => {
+    return res.status(200).json({
+        nombre: req.session.user.nombre,
+        archivo: req.session.user.archivo || null,
+        mensaje: req.session.user.archivo
+            ? 'El usuario ya tiene un archivo subido.'
+            : 'El usuario todavía no ha subido ningún archivo.'
+    });
+};
